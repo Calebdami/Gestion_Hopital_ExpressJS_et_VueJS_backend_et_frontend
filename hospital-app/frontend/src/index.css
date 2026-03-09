@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global base styles */
+@layer base {
+  html, body { height: 100%; }
+  body { @apply font-sans bg-slate-50 text-slate-900 -antialiased; }
+}
+
+@layer components {
+  .app-input {
+    @apply border border-slate-200 rounded px-2 py-1 focus:ring-2 focus:ring-hospital-600 focus:border-hospital-600 transition-all duration-200;
+  }
+}
+
+/* Scrollbar styling */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+}

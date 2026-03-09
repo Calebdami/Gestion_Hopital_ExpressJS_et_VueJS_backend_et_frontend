@@ -1,0 +1,57 @@
+[
+  {
+    "id": 2,
+    "username": "dr_martin",
+    "first_name": "Martin",
+    "last_name": "Bernard",
+    "gender": "male",
+    "specialization": "Cardiologie",
+    "rpps": "RPPS-0002",
+    "phone": "0123456789",
+    "email": "dr.martin@hospital.fr",
+    "availability": ["Mon 09:00-12:00","Wed 14:00-17:00"],
+    "location": "Cabinet 12B",
+    "signature_image": "",
+    "profile_photo": "",
+    "status": "active",
+    "created_at": "2026-03-07T00:00:00Z",
+    "updated_at": "2026-03-07T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "username": "dr_sophie",
+    "first_name": "Sophie",
+    "last_name": "Leclerc",
+    "gender": "female",
+    "specialization": "Neurologie",
+    "rpps": "RPPS-0003",
+    "phone": "0987654321",
+    "email": "dr.sophie@hospital.fr",
+    "availability": ["Tue 10:00-13:00","Thu 15:00-18:00"],
+    "location": "Cabinet 3A",
+    "signature_image": "",
+    "profile_photo": "",
+    "status": "active",
+    "created_at": "2026-03-07T00:00:00Z",
+    "updated_at": "2026-03-07T00:00:00Z"
+  }
+  ,
+  {
+    "id": 9,
+    "username": "dr_hong",
+    "first_name": "Hong",
+    "last_name": "Tran",
+    "gender": "female",
+    "specialization": "Pédiatrie",
+    "rpps": "RPPS-0009",
+    "phone": "",
+    "email": "dr.hong@hospital.fr",
+    "availability": [],
+    "location": "Cabinet 7C",
+    "signature_image": "",
+    "profile_photo": "",
+    "status": "active",
+    "created_at": "2026-03-09T08:29:09.744Z",
+    "updated_at": "2026-03-09T08:29:09.744Z"
+  }
+]

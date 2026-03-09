@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "patient_id": 1,
+    "doctor_id": 2,
+    "patient_name": "Pierre Dupont",
+    "doctor_name": "Martin Bernard",
+    "appointment_date": "2026-03-10T09:00:00Z",
+    "appointment_time": "09:00",
+    "reason": "Consultation",
+    "notes": "Première visite",
+    "status": "pending",
+    "created_at": "2026-03-07T10:30:00Z",
+    "updated_at": "2026-03-09T15:01:56.385Z"
+  },
+  {
+    "id": 2,
+    "patient_id": 2,
+    "doctor_id": 3,
+    "patient_name": "Marie Martin",
+    "doctor_name": "Sophie Leclerc",
+    "appointment_date": "2026-03-10T14:00:00Z",
+    "appointment_time": "14:00",
+    "reason": "Suivi",
+    "notes": "Examen complémentaire",
+    "status": "completed",
+    "created_at": "2026-03-07T11:30:00Z",
+    "updated_at": "2026-03-09T11:06:04.479Z"
+  }
+]
