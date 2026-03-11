@@ -1,6 +1,7 @@
 # Hospital Management System
 
 Un système complet de gestion d'hôpital avec trois niveaux d'accès : Administrateur, Docteur, et Réceptionniste.
+![Capture d'écran du projet](./frontend/src/assets/readmeImage.png)
 
 ## Structure du Projet
 
