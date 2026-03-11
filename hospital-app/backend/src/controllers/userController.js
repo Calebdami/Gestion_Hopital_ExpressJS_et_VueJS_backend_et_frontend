@@ -64,8 +64,33 @@ class UserController {
                 return res.status(403).json({ message: 'Cannot delete default admin account' })
             }
 
+            // Move user to trash
+            const trash = db.all('trash')
+            trash.push({
+                id: trash.length + 1,
+                item_type: 'user',
+                item_id: userToDelete.id,
+                item_data: userToDelete,
+                deleted_by: req.user?.id || 1,
+                created_at: new Date().toISOString()
+            })
+            db.writeFile('trash.json', trash)
+
             // If user is a doctor, also remove doctor profile if present
             if (userToDelete.role === 'doctor') {
+                const doc = db.get('doctors', userToDelete.id)
+                if (doc) {
+                    const t = db.all('trash')
+                    t.push({
+                        id: t.length + 1,
+                        item_type: 'doctor',
+                        item_id: doc.id,
+                        item_data: doc,
+                        deleted_by: req.user?.id || 1,
+                        created_at: new Date().toISOString()
+                    })
+                    db.writeFile('trash.json', t)
+                }
                 db.delete('doctors', userToDelete.id)
             }
 

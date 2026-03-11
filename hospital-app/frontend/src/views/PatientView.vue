@@ -90,15 +90,15 @@
     const { showConfirmModal, confirmMessage, confirm, handleConfirm, handleCancel } = useConfirmation()
 
     const deletePatient = (patient) => {
-    confirm(`Êtes-vous sûr de vouloir supprimer le patient ${patient.first_name} ${patient.last_name} ?`, async () => {
-        try {
-            await patientService.delete(patient.id)
-            notificationStore.success('Patient supprimé avec succès')
-            await dataStore.fetchPatients()
-        } catch (err) {
-            notificationStore.error('Erreur lors de la suppression')
-        }
-    })
+        confirm(`Êtes-vous sûr de vouloir supprimer le patient ${patient.first_name} ${patient.last_name} ?`, async () => {
+            try {
+                await patientService.delete(patient.id)
+                notificationStore.success('Patient supprimé avec succès')
+                await dataStore.fetchPatients()
+            } catch (err) {
+                notificationStore.error('Erreur lors de la suppression')
+            }
+        })
     }
 
     const savePatient = async () => {

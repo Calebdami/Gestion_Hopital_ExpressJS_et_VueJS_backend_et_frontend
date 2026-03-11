@@ -1,1 +1,91 @@
-[]
+[
+  {
+    "id": 1,
+    "item_type": "patient",
+    "item_id": 3,
+    "item_data": {
+      "id": 3,
+      "first_name": "Rogalex",
+      "last_name": "Zannou",
+      "birth_name": "Zannou",
+      "used_name": "",
+      "given_names": "Rogalex",
+      "email": "roga@gmail.com",
+      "phone": "0123456789",
+      "date_of_birth": "2002-02-08",
+      "sex": "male",
+      "address": "Cotonou",
+      "nir": "",
+      "insurance": {
+        "name": "",
+        "member_number": ""
+      },
+      "third_party_payer": false,
+      "emergency_contact": {
+        "name": "",
+        "phone": ""
+      },
+      "treating_physician": "",
+      "blood_group": "",
+      "allergies": [],
+      "major_history": [],
+      "current_treatments": [],
+      "weight_kg": null,
+      "height_cm": null,
+      "vaccination_status": "",
+      "payment_method": "",
+      "rgpd_consent": false,
+      "assigned_doctor_id": "1",
+      "assigned_room_id": null,
+      "status": "active",
+      "created_at": "2026-03-07T11:55:50.083Z",
+      "updated_at": "2026-03-07T11:55:50.083Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T14:48:01.572Z"
+  },
+  {
+    "id": 2,
+    "item_type": "user",
+    "item_id": 5,
+    "item_data": {
+      "id": 5,
+      "username": "admin2",
+      "password": "admin123",
+      "role": "admin",
+      "first_name": "Admin",
+      "last_name": "Deux",
+      "gender": "other",
+      "phone": "",
+      "recovery_question": "",
+      "profile_photo": "",
+      "status": "active",
+      "department": "Informatique",
+      "created_at": "2026-03-07T00:00:00Z",
+      "updated_at": "2026-03-07T00:00:00Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T15:19:13.869Z"
+  },
+  {
+    "id": 3,
+    "item_type": "appointment",
+    "item_id": 2,
+    "item_data": {
+      "id": 2,
+      "patient_id": 2,
+      "doctor_id": 3,
+      "patient_name": "Marie Martin",
+      "doctor_name": "Sophie Leclerc",
+      "appointment_date": "2026-03-10T14:00:00Z",
+      "appointment_time": "14:00",
+      "reason": "Suivi",
+      "notes": "Examen complémentaire",
+      "status": "completed",
+      "created_at": "2026-03-07T11:30:00Z",
+      "updated_at": "2026-03-09T11:06:04.479Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T15:26:18.245Z"
+  }
+]

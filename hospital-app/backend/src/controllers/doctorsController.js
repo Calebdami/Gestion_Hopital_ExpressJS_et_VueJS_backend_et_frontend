@@ -50,10 +50,36 @@ class DoctorsController {
             // Only admins can delete doctors (route should protect but double-check)
             if (req.user.role !== 'admin') return res.status(403).json({ message: 'Not authorized' })
 
+            // Move doctor profile to trash
+            const trash = db.all('trash')
+            trash.push({
+                id: trash.length + 1,
+                item_type: 'doctor',
+                item_id: doc.id,
+                item_data: doc,
+                deleted_by: req.user?.id || 1,
+                created_at: new Date().toISOString()
+            })
+            db.writeFile('trash.json', trash)
+
             // Remove doctor profile
             db.delete('doctors', parseInt(id))
-            // Remove login/user entry if exists
-            const removedUser = db.delete('users', parseInt(id))
+
+            // Remove login/user entry if exists and move it to trash as well
+            const removedUser = db.get('users', parseInt(id))
+            if (removedUser) {
+                const t = db.all('trash')
+                t.push({
+                    id: t.length + 1,
+                    item_type: 'user',
+                    item_id: removedUser.id,
+                    item_data: removedUser,
+                    deleted_by: req.user?.id || 1,
+                    created_at: new Date().toISOString()
+                })
+                db.writeFile('trash.json', t)
+                db.delete('users', parseInt(id))
+            }
 
             res.json({ message: 'Doctor deleted', removedUser: removedUser || null })
         } catch (err) {

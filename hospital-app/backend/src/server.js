@@ -8,6 +8,7 @@ import patientRoutes from './routes/patientRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import doctorRoutes from './routes/doctorRoutes.js';
 import roomRoutes from './routes/roomRoutes.js';
+import trashRoutes from './routes/trashRoutes.js';
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use('/api/patients', patientRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/rooms', roomRoutes);
+app.use('/api/trash', trashRoutes);
 
 // Catch-all for invalid routes
 app.use((req, res) => {
