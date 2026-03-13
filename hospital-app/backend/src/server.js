@@ -42,7 +42,4 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`🏥 Hospital Management Server running on http://localhost:${PORT}`);
-  console.log(`📊 API Health: http://localhost:${PORT}/api/health`);
-});
+app.listen(PORT, () => { console.log(`Hospital Management Server running on http://localhost:${PORT}`) });

@@ -3,7 +3,10 @@ import db from '../database/jsonDatabase.js';
 class RoomController {
   static getAll(req, res) {
     try {
-      const rooms = db.all('rooms');
+      let rooms = db.all('rooms');
+      if (req.query.available === 'true') {
+        rooms = rooms.filter(r => (r.occupied_capacity || 0) < (r.total_capacity || 0))
+      }
       res.json(rooms);
     } catch (err) {
       res.status(500).json({ message: 'Error fetching rooms', error: err.message });

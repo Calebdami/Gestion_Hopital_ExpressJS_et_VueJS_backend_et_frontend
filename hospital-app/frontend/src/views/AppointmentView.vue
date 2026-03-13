@@ -41,7 +41,9 @@
 
     const editAppointment = (apt) => {
         editingAppointment.value = apt
-        form.value = { ...apt, status: apt.status || 'pending' }
+        // populate datetime-local input with combined date+time if available
+        const dt = (apt.appointment_date && apt.appointment_time) ? `${apt.appointment_date}T${apt.appointment_time}` : (apt.appointment_date || '')
+        form.value = { ...apt, status: apt.status || 'pending', appointment_date: dt }
         showAddForm.value = true
     }
 
@@ -61,17 +63,34 @@
 
     const saveAppointment = async () => {
         try {
+            // prepare payload: split datetime-local into date and time for API
+            const payload = { ...form.value }
+            if (payload.appointment_date) {
+                // payload.appointment_date may be a datetime-local string like '2026-03-11T09:30'
+                const d = new Date(payload.appointment_date)
+                if (!isNaN(d.getTime())) {
+                    const yyyy = d.getFullYear()
+                    const mm = String(d.getMonth() + 1).padStart(2, '0')
+                    const dd = String(d.getDate()).padStart(2, '0')
+                    const hh = String(d.getHours()).padStart(2, '0')
+                    const min = String(d.getMinutes()).padStart(2, '0')
+                    payload.appointment_date = `${yyyy}-${mm}-${dd}`
+                    payload.appointment_time = `${hh}:${min}`
+                }
+            }
+
             if (editingAppointment.value) {
-                await appointmentService.update(editingAppointment.value.id, form.value)
+                await appointmentService.update(editingAppointment.value.id, payload)
                 notificationStore.success('Rendez-vous modifié')
             } else {
-                await appointmentService.create(form.value)
+                await appointmentService.create(payload)
                 notificationStore.success('Rendez-vous créé')
             }
             closeForm()
                 await dataStore.fetchAppointments()
         } catch (err) {
-            notificationStore.error('Erreur lors de l\'enregistrement')
+            const msg = err?.response?.data?.message || err.message || 'Erreur lors de l\'enregistrement'
+            notificationStore.error(msg)
         }
     }
 

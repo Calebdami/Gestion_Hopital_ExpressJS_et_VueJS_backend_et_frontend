@@ -87,5 +87,89 @@
     },
     "deleted_by": 1,
     "created_at": "2026-03-11T15:26:18.245Z"
+  },
+  {
+    "id": 4,
+    "item_type": "appointment",
+    "item_id": 2,
+    "item_data": {
+      "id": 2,
+      "patient_id": 1,
+      "doctor_id": 9,
+      "patient_name": "Pierre Dupont",
+      "doctor_name": "Hong Tran",
+      "appointment_date": "2026-03-12T10:00",
+      "appointment_time": "",
+      "reason": "",
+      "notes": "Douleurs chroniques",
+      "status": "confirmed",
+      "created_at": "2026-03-11T17:07:33.202Z",
+      "updated_at": "2026-03-11T17:23:17.218Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T18:51:49.375Z"
+  },
+  {
+    "id": 5,
+    "item_type": "appointment",
+    "item_id": 3,
+    "item_data": {
+      "id": 3,
+      "patient_id": 2,
+      "doctor_id": 9,
+      "patient_name": "Marie Martin",
+      "doctor_name": "Hong Tran",
+      "appointment_date": "2026-03-12T10:00",
+      "appointment_time": "",
+      "reason": "",
+      "notes": "Douleurs inhabituelles",
+      "status": "confirmed",
+      "created_at": "2026-03-11T17:08:16.617Z",
+      "updated_at": "2026-03-11T17:23:20.926Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T18:51:51.962Z"
+  },
+  {
+    "id": 6,
+    "item_type": "appointment",
+    "item_id": 1,
+    "item_data": {
+      "id": 1,
+      "patient_id": 1,
+      "doctor_id": 2,
+      "patient_name": "Pierre Dupont",
+      "doctor_name": "Martin Bernard",
+      "appointment_date": "2026-03-10T09:00:00Z",
+      "appointment_time": "09:00",
+      "reason": "Consultation",
+      "notes": "Première visite",
+      "status": "pending",
+      "created_at": "2026-03-07T10:30:00Z",
+      "updated_at": "2026-03-09T15:01:56.385Z"
+    },
+    "deleted_by": 1,
+    "created_at": "2026-03-11T18:51:56.721Z"
+  },
+  {
+    "id": 7,
+    "item_type": "appointment",
+    "item_id": 5,
+    "item_data": {
+      "id": 5,
+      "patient_id": 1,
+      "doctor_id": 9,
+      "patient_name": "Pierre Dupont",
+      "doctor_name": "Hong Tran",
+      "appointment_date": "2026-03-12",
+      "appointment_time": "15:00",
+      "reason": "",
+      "notes": "",
+      "status": "pending",
+      "created_at": "2026-03-11T19:01:02.349Z",
+      "updated_at": "2026-03-11T19:01:02.349Z"
+    },
+    "deleted_by": 8,
+    "created_at": "2026-03-11T19:04:12.079Z"
   }
 ]

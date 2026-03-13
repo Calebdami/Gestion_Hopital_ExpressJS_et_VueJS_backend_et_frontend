@@ -38,7 +38,8 @@ export const useDataStore = defineStore('data', () => {
     const fetchRooms = async () => {
         loading.value = true
         try {
-            const response = await apiClient.get('/rooms')
+            // fetch only available rooms by default (not at full capacity)
+            const response = await apiClient.get('/rooms?available=true')
             rooms.value = response.data
         } catch (err) {
             console.error('Error fetching rooms:', err)

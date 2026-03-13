@@ -14,8 +14,6 @@ const hashPassword = async (password) => {
   return bcryptjs.hash(password, salt);
 };
 
-const comparePasswords = async (password, hashedPassword) => {
-  return bcryptjs.compare(password, hashedPassword);
-};
+const comparePasswords = async (password, hashedPassword) => { return bcryptjs.compare(password, hashedPassword) };
 
 export { generateToken, hashPassword, comparePasswords };
